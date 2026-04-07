@@ -1,21 +1,17 @@
-import clsx from 'clsx';
+import { PostFeatured } from '@/components/PostFeatured'
+import { Posts } from '@/components/Posts'
+import { SpinLoader } from '@/components/SpinLoader'
+import { ThemeToggle } from '@/components/ThemeToggle'
+import { Suspense } from 'react'
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div>
-      <h2 
-        className={clsx(
-          'text-2xl', 
-          'font-bold', 
-          'text-blue-200', 
-          'hover:text-purple-900', 
-          'hover:bg-blue-900', 
-          'transition', 
-          'duration-200',
-        )}
-      >
-          Página de Next.js
-      </h2>
+      <ThemeToggle />
+      <Suspense fallback={<SpinLoader className='mb-16 min-h-20' />}>
+        <PostFeatured />
+        <Posts />
+      </Suspense>
     </div>
   )
 }

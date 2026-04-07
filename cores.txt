@@ -1,0 +1,26 @@
+135deg, #000000 0%, #ffffff 25%, #996633 60%, #777781 100%
+120deg, #ffffff 0%, #ffffff 15%, #996633 30%, #996633 45%, #000000 60%, #777781 80%, #ffffff 100%
+background: linear-gradient(
+  135deg,
+  #ffffff 0%,
+  #996633 40%,
+  #777781 70%,
+  #000000 100%
+);
+
+background: linear-gradient(
+  135deg,
+  #1e1e1e 0%,
+  #554433 40%,
+  #555567 70%,
+  #000000 100%
+);
+
+background: linear-gradient(
+  135deg,
+  #996633 0%,
+  #b58a55 25%,
+  #ffffff 50%,
+  #a5a5a9 75%,
+  #777781 100%
+);

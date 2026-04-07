@@ -1,0 +1,24 @@
+- Crie rotas dinâmicas pelas pastas, lembre-se que layout.tsx e page.tsx na página principal de app é colocado em todas as páginas,
+se você criar um menu em layout.tsx em app, irá aparecer o menu em todos os lugares
+- Rotas dinâmicas são criadas pelos colchetes []
+
+- Error Boundaries são erros colocados diretamente na raiz do projeto, no qual pega erros da filha e faça com que a aplicação não quebre, mostrando UI
+- Se eu importar um Server Component dentro de um Client Component o mesmo se tornará Client Component. Para resolver, basta passar como children para o Client
+Component:
+function ClientComponent({ children }: { children: React.ReactNode }) {
+  return (
+    <div>{children}</div>
+  )
+}
+
+- ORM faz a conexão com o que o desenvolvedor escreve em código com a base de dados
+- ORM drizzle é bom
+- O Request Memoization memoriza a requisição, por exemplo, se tiver vários componentes numa mesma página chamando a mesma request, ele vai usar o resultado
+da mesma. Ele limpa o cache dessa request após outra renderização
+- Data Cache armazena os dados das APIs, podendo fazer revalidate
+- Full Route Cache armazena dados da página intera
+- Route Cache realiza caches específicas das rotas
+- ISR Incremental Static Regeneration é quando uma página é static, porém usa revalidate para atualizar
+- Server Actions simplificam as chamadas para APIs, como CREATE, GET do lado do servidor, porém sendo aplicado nos componentes frontend
+- As tags são parecidas com as queries keys do React Query, podendo ser revalidadas a cada clique de um button
+- Os buttons que mexem, por exemplo, com requests, coloque em Server Action
