@@ -4,6 +4,8 @@ import { notFound } from 'next/navigation'
 import { PostHeading } from '../PostHeading'
 import PostDate from '../PostDate'
 
+export const dynamic = 'force-dynamic'
+
 type SinglePostPageProps = {
   slug: string
 }

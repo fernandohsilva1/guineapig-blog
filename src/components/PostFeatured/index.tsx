@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import clsx from 'clsx'
 import { PostImageCover } from '../PostImageCover'
 import { PostSummary } from '../PostSummary'

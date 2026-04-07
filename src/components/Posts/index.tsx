@@ -2,6 +2,8 @@ import { PostImageCover } from '../PostImageCover'
 import { PostSummary } from '../PostSummary'
 import { findAllPublicPostsCached } from '@/lib/post/queries/public'
 
+export const dynamic = 'force-dynamic'
+
 export async function Posts() {
   const posts = await findAllPublicPostsCached()
 

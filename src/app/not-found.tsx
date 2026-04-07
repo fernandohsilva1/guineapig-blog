@@ -1,3 +1,5 @@
+export const dyamic = 'force-dynamic'
+
 import ErrorMessage from '@/components/ErrorMessage'
 import { findAllPublicPostsCached } from '@/lib/post/queries/public'
 

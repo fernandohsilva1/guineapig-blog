@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic'
+
 import SinglePostPage from '@/components/SinglePostPage'
 import { findPublicPostsBySlugCached } from '@/lib/post/queries/public'
 import { Metadata } from 'next'
