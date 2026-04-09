@@ -1,8 +1,13 @@
 'use server'
 
 import { verifyLoginSession } from '@/lib/login/manage-login'
-import { writeFile, mkdir } from 'fs/promises'
-import { extname, resolve } from 'path'
+import { v2 as cloudinary } from 'cloudinary'
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+})
 
 type UploadImageActionResult = {
   url: string
@@ -40,24 +45,19 @@ export async function uploadImageAction(
     return makeResult({ error: 'A imagem deve ser JPEG/PNG' })
   }
 
-  const imageExtension = extname(file.name)
-  const uniqueImageName = `${Date.now()}${imageExtension}`
-  const imageUploadLocation = process.env.IMAGE_UPLOAD_DIRECTORY || 'uploads'
-
-  const uploadFullPath = resolve(process.cwd(), 'public', imageUploadLocation)
-
-  await mkdir(uploadFullPath, { recursive: true })
-
   const fileArrayBuffer = await file.arrayBuffer()
   const buffer = Buffer.from(fileArrayBuffer)
 
-  const fileFullPath = resolve(uploadFullPath, uniqueImageName)
+  const result = await new Promise<{ secure_url: string }>(
+    (resolve, reject) => {
+      cloudinary.uploader
+        .upload_stream({ folder: 'blog' }, (error, result) => {
+          if (error || !result) return reject(error)
+          resolve(result)
+        })
+        .end(buffer)
+    },
+  )
 
-  await writeFile(fileFullPath, buffer)
-
-  const imgServerUrl =
-    process.env.IMAGE_SERVER_URL || 'http://localhost:3000/uploads'
-  const url = `${imgServerUrl}/${uniqueImageName}`
-
-  return makeResult({ url })
+  return makeResult({ url: result.secure_url })
 }
