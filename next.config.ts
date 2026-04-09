@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: '*.railway.app',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
     ],
   },
 }
