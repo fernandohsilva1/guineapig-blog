@@ -4,7 +4,7 @@ import ErrorMessage from '@/components/ErrorMessage'
 export const dynamic = 'force-dynamic'
 
 export default async function LoginPage() {
-  const allowLogin = Boolean(Number(process.env.ALLOW_lOGIN))
+  const allowLogin = Boolean(Number(process.env.ALLOW_LOGIN))
 
   if (!allowLogin) {
     return (
