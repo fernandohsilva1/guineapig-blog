@@ -27,6 +27,7 @@ export async function PostFeatured() {
         href={postLink}
         src={post.coverImageUrl}
         alt={post.title}
+        className='sm:justify-self-end'
       />
       <PostSummary
         postHeading='h1'

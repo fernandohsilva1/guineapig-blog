@@ -15,7 +15,7 @@ export function PostHeading({ children, url, as: Tag }: PostHeadingProps) {
   return (
     <Tag className={HeadingStyle[Tag]}>
       <Link
-        className='text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400'
+        className='text-slate-900 hover:text-white dark:text-white dark:hover:text-[#ce9943]'
         href={url}
       >
         {children}
