@@ -14,7 +14,10 @@ export function PostHeading({ children, url, as: Tag }: PostHeadingProps) {
 
   return (
     <Tag className={HeadingStyle[Tag]}>
-      <Link className='hover:text-blue-900' href={url}>
+      <Link
+        className='text-slate-900 hover:text-blue-600 dark:text-white dark:hover:text-blue-400'
+        href={url}
+      >
         {children}
       </Link>
     </Tag>

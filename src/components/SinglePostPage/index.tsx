@@ -22,7 +22,7 @@ export default async function SinglePostPage({ slug }: SinglePostPageProps) {
           href={`/post/${post.slug}`}
           src={post.coverImageUrl}
           alt={post.title}
-          className='block h-[720px] w-[1200px] rounded-xl'
+          className='max-h-[720px]'
         />
         <PostHeading url={`/post/${post.slug}`} as='h2'>
           {post.title}

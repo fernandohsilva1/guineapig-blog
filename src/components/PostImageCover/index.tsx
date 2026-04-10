@@ -32,6 +32,7 @@ export function PostImageCover({
     >
       <Image
         fill
+        sizes='(max-width: 720px) 100vw, 720px'
         src={NormalizeImageUrl(src)}
         alt={alt}
         priority

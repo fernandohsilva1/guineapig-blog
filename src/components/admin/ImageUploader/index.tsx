@@ -91,7 +91,7 @@ export function ImageUploader({
             <b>URL: </b>
             {NormalizeImageUrl(imgUrl)}
           </p>
-          <img className='rounded-lg' src={imgUrl} />
+          <img className='w-full max-w-full rounded-lg' src={imgUrl} />
         </div>
       )}
       <input
