@@ -6,14 +6,14 @@ import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => setMounted(true), [])
 
   if (!mounted) return null
 
-  const isDark = theme === 'dark'
+  const isDark = resolvedTheme === 'dark'
 
   return (
     <button
@@ -30,10 +30,10 @@ export function ThemeToggle() {
         'justify-center',
         'rounded-full',
         'border',
-        'border-slate-300',
-        'bg-slate-100',
+        'border-slate-800',
+        'bg-slate-800',
         'transition-all',
-        'hover:bg-slate-200',
+        'hover:bg-slate-800',
         'dark:border-slate-700',
         'dark:bg-slate-800',
         'dark:hover:bg-slate-700',
@@ -59,7 +59,7 @@ export function ThemeToggle() {
             exit={{ rotate: -90, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <Moon size={20} className='text-slate-700 dark:text-slate-200' />
+            <Moon size={20} className='text-slate-200 dark:text-slate-200' />
           </motion.div>
         )}
       </AnimatePresence>

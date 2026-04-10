@@ -24,6 +24,14 @@ body {
   );
 }
 
+.dark button[aria-label='Alternar Tema'] {
+  @apply border-slate-700 bg-slate-800;
+}
+
+.dark button[aria-label='Alternar Tema']:hover {
+  @apply bg-slate-700;
+}
+
 a,
 button {
   @apply transition-colors duration-300;
