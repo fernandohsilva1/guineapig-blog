@@ -21,7 +21,13 @@ export async function PostFeatured() {
 
   return (
     <section
-      className={clsx('group mb-16 grid grid-cols-1 gap-8', 'sm:grid-cols-2')}
+      className={clsx(
+        'group mb-16 grid grid-cols-1 gap-8',
+        'sm:grid-cols-2',
+        'max-w-[1280px]',
+        'md:gap-4',
+        'xl:gap-2',
+      )}
     >
       <PostImageCover
         href={postLink}
