@@ -25,8 +25,7 @@ export async function PostFeatured() {
         'group mb-16 grid grid-cols-1 gap-8',
         'sm:grid-cols-2',
         'max-w-[1280px]',
-        'md:gap-4',
-        'xl:gap-2',
+        'xl:gap-8',
       )}
     >
       <PostImageCover
