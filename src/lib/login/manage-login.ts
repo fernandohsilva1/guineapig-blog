@@ -30,7 +30,10 @@ export async function verifyLoginSession() {
 
   if (!jwtPayload) return false
 
-  return jwtPayload?.username === process.env.LOGIN_USER
+  const users: { username: string; password: string }[] = JSON.parse(
+    process.env.LOGIN_USERS || '[]',
+  )
+  return users.some(user => user.username === jwtPayload?.username)
 }
 
 export async function signJwt(jwtPayload: JwtPayload) {

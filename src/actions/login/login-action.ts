@@ -12,6 +12,9 @@ type LoginActionState = {
 
 export async function loginAction(state: LoginActionState, formData: FormData) {
   const allowLogin = Boolean(Number(process.env.ALLOW_LOGIN))
+  const users: { username: string; password: string }[] = JSON.parse(
+    process.env.LOGIN_USERS || '[]',
+  )
 
   if (!allowLogin) {
     return {
@@ -39,11 +42,10 @@ export async function loginAction(state: LoginActionState, formData: FormData) {
     }
   }
 
-  const isUsernameCorrect = username === process.env.LOGIN_USER
-  const isPasswordCorrect = await verifyPassword(
-    password,
-    process.env.LOGIN_PASSWORD || '',
-  )
+  const isUsernameCorrect = users.find(user => user.username === username)
+  const isPasswordCorrect =
+    !!isUsernameCorrect &&
+    (await verifyPassword(password, isUsernameCorrect.password))
 
   if (!isUsernameCorrect || !isPasswordCorrect) {
     return {
