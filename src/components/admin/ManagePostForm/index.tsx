@@ -83,7 +83,7 @@ export function ManagePostForm(props: ManagePostFormProps) {
 
   return (
     <form action={action} className={clsx('mb-16', 'flex flex-col gap-4')}>
-      <div className='flex flex-col gap-6'>
+      <div className='flex flex-col gap-6 text-gray-900'>
         <InputText
           labelText='ID'
           name='id'
@@ -101,7 +101,7 @@ export function ManagePostForm(props: ManagePostFormProps) {
           readOnly
         />
         <InputText
-          labelText='Author'
+          labelText='Autor'
           name='author'
           placeholder='Digite o nome do autor'
           type='text'
@@ -109,7 +109,7 @@ export function ManagePostForm(props: ManagePostFormProps) {
           disabled={isPending}
         />
         <InputText
-          labelText='Title'
+          labelText='Título'
           name='title'
           placeholder='Digite o título'
           type='text'
@@ -117,7 +117,7 @@ export function ManagePostForm(props: ManagePostFormProps) {
           disabled={isPending}
         />
         <InputText
-          labelText='Excerto'
+          labelText='Resumo'
           name='excerpt'
           placeholder='Digite o resumo'
           type='text'
