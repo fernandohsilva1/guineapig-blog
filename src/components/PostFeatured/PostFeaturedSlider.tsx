@@ -107,14 +107,14 @@ export function PostFeaturedSlider({ posts }: PostFeaturedSliderProps) {
           <button
             onClick={prev}
             aria-label='Slide anterior'
-            className='absolute top-1/2 left-29 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90'
+            className='absolute top-1/2 left-39 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90'
           >
             &lt;
           </button>
           <button
             onClick={next}
             aria-label='Próximo slide'
-            className='absolute top-1/2 right-29 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90'
+            className='absolute top-1/2 right-39 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90'
           >
             &gt;
           </button>
