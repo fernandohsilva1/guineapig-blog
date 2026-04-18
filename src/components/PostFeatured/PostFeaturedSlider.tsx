@@ -42,7 +42,7 @@ export function PostFeaturedSlider({ posts }: PostFeaturedSliderProps) {
   return (
     <section className='relative mb-16 w-full'>
       <div
-        className='relative flex h-[520px] w-full overflow-hidden'
+        className='relative flex h-[520px] w-full overflow-hidden sm:h-[420px] md:h-[520px]'
         style={{ perspective: '1200px', perspectiveOrigin: '50% 50%' }}
       >
         {posts.map((post: PostModel, index: number) => {
@@ -65,7 +65,7 @@ export function PostFeaturedSlider({ posts }: PostFeaturedSliderProps) {
               key={post.slug}
               onClick={() => !isCenter && setCurrent(index)}
               className={clsx(
-                'absolute top-1/2 left-1/2 aspect-[2/3] w-[26%] max-w-[300px] min-w-[160px] overflow-hidden rounded-2xl transition-all duration-700',
+                'absolute top-1/2 left-1/2 aspect-[2/3] w-[60%] max-w-[300px] min-w-[140px] overflow-hidden rounded-2xl transition-all duration-700 sm:w-[40%] md:w-[26%]',
               )}
               style={{
                 transform,
@@ -104,17 +104,33 @@ export function PostFeaturedSlider({ posts }: PostFeaturedSliderProps) {
 
       {posts.length > 1 && (
         <>
+          <div className='mt-4 flex justify-center gap-4 sm:hidden'>
+            <button
+              onClick={prev}
+              aria-label='Slide anterior'
+              className='hover:bg-black-90 flex h-10 w-10 items-center justify-center rounded-full bg-black text-2xl text-white'
+            >
+              &lt;
+            </button>
+            <button
+              onClick={next}
+              aria-label='Próximo slide'
+              className='hover:bg-black-90 flex h-10 w-10 items-center justify-center rounded-full bg-black text-2xl text-white'
+            >
+              &gt;
+            </button>
+          </div>
           <button
             onClick={prev}
             aria-label='Slide anterior'
-            className='absolute top-1/2 left-39 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90'
+            className='absolute top-1/2 left-2 z-30 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90 sm:left-6 sm:flex md:left-10'
           >
             &lt;
           </button>
           <button
             onClick={next}
             aria-label='Próximo slide'
-            className='absolute top-1/2 right-39 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90'
+            className='absolute top-1/2 right-2 z-30 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-black/50 text-2xl text-white transition-colors hover:bg-black/90 sm:right-6 sm:flex md:right-10'
           >
             &gt;
           </button>
