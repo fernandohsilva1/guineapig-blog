@@ -31,7 +31,10 @@ export function LoginForm() {
         'mx-auto mt-16 mb-32 max-w-sm text-center',
       )}
     >
-      <form action={action} className='flex flex-1 flex-col gap-6'>
+      <form
+        action={action}
+        className='flex flex-1 flex-col gap-6 text-gray-900'
+      >
         <InputText
           type='text'
           name='username'
