@@ -51,8 +51,8 @@ export async function createPostAction(
   const validPostData = zodParsedObj.data
   const newPost: PostModel = {
     ...validPostData,
-    createdAt: new Date().toString(),
-    updatedAt: new Date().toString(),
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
     id: generateID(),
     slug: makeSlugFromText(validPostData.title),
   }

@@ -95,7 +95,7 @@ export class DrizzlePostRepository implements PostRepository {
       throw new Error('Post não está na base de dados!')
     }
 
-    const updatedAt = new Date().toString()
+    const updatedAt = new Date().toISOString()
     const postData = {
       author: newPostData.author,
       content: newPostData.content,
